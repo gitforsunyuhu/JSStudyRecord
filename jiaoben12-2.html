@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>可折叠菜单的实现</title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding:0;
+				}
+			#menuexa{
+				width:800px;
+				height:400px;
+				margin:0 auto;
+				padding: 10px 0;
+				background: bisque;
+				}
+			a{
+				display: block;
+				width:200px;
+				height: 40px;
+				line-height: 40px;
+				text-decoration: none;
+				background: green;
+				color: white;
+			}
+			a:hover{
+				display: block;
+				width:200px;
+				background: red;
+				cursor: pointer;
+				color: yellow;
+				line-height: 40px;	
+			}
+			.menu{
+				margin: 0;
+				padding:0 0 0 10px;
+				display: none;
+			}
+			li{	
+				margin: 0;
+			}
+			li:hover{	
+				background: ;
+			}
+			.slide{
+				padding: 0;
+				height: 40px;
+				list-style-type:none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="menuexa">
+			<p style="text-align: center;">可折叠菜单</p>
+			
+			
+			<div class="menu1" style="width:200px;display: inline;float: left;">
+				<a  href="bingocard.html" class="menucli" >菜单1</a>
+				<ul id="menu1" class="menu">
+					<a href="1.html"><li class="slide">图书</li></a>
+					<li class="slide"><a href="1.html">视频</a> </li>
+					<li class="slide"><a href="1.html">语音</a> </li>
+				</ul>
+			</div>
+			<div class="menu2" style="width:200px;display: inline;float: left;">
+				<a class="menucli" >菜单2</a>
+				<ul id="menu2"  class="menu">
+					<li class="slide"><a href="1.html">图书</a></li>
+					<li class="slide"><a href="1.html">视频</a> </li>
+					<li class="slide"><a href="1.html">语音</a> </li>
+				</ul>
+			</div>
+			<div class="menu3" style="width:200px;display: inline;float: left;">
+				<a class="menucli" >菜单2</a>
+				<ul id="menu3"  class="menu">
+					<li class="slide"><a href="1.html">图书</a></li>
+					<li class="slide"><a href="1.html">视频</a> </li>
+					<li class="slide"><a href="1.html">语音</a> </li>
+				</ul>
+			</div>
+			<div class="menu4" style="width:200px;display: inline;float: left;">
+				<a class="menucli" >菜单2</a>
+				<ul id="menu4"  class="menu">
+					<li class="slide"><a href="1.html">图书</a></li>
+					<li class="slide"><a href="1.html">视频</a> </li>
+					<li class="slide"><a href="1.html">语音</a> </li>
+				</ul>
+			</div>
+
+		</div>
+		
+	</body>
+	
+	<script type="text/javascript">
+		window.onload = initMenu;
+		function initMenu(){
+			var menus = document.getElementsByTagName("a");
+			for(var i=0; i< menus.length ; i ++){
+				if(menus[i].className == "menucli"){
+					menus[i].parentNode.onmouseover = toggleMenu;
+					menus[i].parentNode.onmouseout = shouhui;
+					menus[i].onclick =function(){
+						return false;
+					};
+				}
+			}
+		}
+		
+		function toggleMenu(){
+				var ulname = this.className;
+				var thisul = document.getElementById(ulname);
+				if(thisul.style.display == "none"){
+					thisul.style.display = "block";
+				}
+		}
+		function shouhui(){
+				var ulname = this.className;
+				var thisul = document.getElementById(ulname);
+				thisul.style.display = "none";
+		}
+		
+	</script>
+</html>

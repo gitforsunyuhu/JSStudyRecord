@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img id="huan" src="img/flyer.png" />
+		<a id="pre" href="#"> shangyige </a>
+		<a id="next" href="#"> >>>next </a>
+	</body>
+	<script>
+		window.onload = initHuan;
+		
+		var images = new Array("img/img1.jpg","img/img2.jpg","img/flyer.png");
+		var i = Math.floor(Math.random()*images.length);
+		
+		function initHuan(){
+			
+			document.getElementById("huan").src = images[i];
+			
+			document.getElementById("pre").onclick = function(){
+				i--;
+				if( i == -1){
+					i=2;
+				}
+				document.getElementById("huan").src = images[i];
+				return false;
+			}
+			document.getElementById("next").onclick = function(){
+				i++;
+				if( i == 3){
+					i=0;
+				}
+				document.getElementById("huan").src = images[i];
+				return false;
+			}
+			
+			xunhuan();
+			
+		}
+		
+		function xunhuan(){
+			i++;
+			if(i == 3){
+				i=0;
+			}
+			document.getElementById("huan").src = images[i];
+		    setTimeout(xunhuan,1000);
+		}
+		
+	</script>
+</html>

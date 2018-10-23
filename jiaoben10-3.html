@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>对象字面值方式</title>
+		<script type="text/javascript">
+			window.onload = initAll();
+			
+			function initAll(){
+				document.getElementsByTagName("form")[0].onsubmit = doChange;
+				chgNode.init();
+			}
+			
+			function doChange(){
+				chgNode.chgAction();
+			}
+			
+			var chaNode = {
+				//新的text
+				inText : function(){
+					return document.getElementById("inText").value;
+				},
+				//新的text节点
+				textNode : function(){
+					return document.ceateTextNode(this.inText);
+				}
+				//新的段落节点
+				newP : function(){
+					return document.createElement("p");
+				},
+				//拥有新的text的新的节点
+				newGraf : function(){
+					return this.newP.appendChild(this.textNode);
+				}
+				//获取旧的段落
+				oldGraf : function(){
+					
+				}
+				
+				chgAction: function(){
+					//首先
+				},
+			}
+			
+		</script>
+	</head>
+	<body>
+		<form action="#">
+			<textarea id="inText" cols="100" rows="5"></textarea>
+			<p>
+				<label>添加节点<input type="radio" name="nodeAction"/></label>
+				<label>删除节点<input type="radio" name="nodeAction"/></label>
+				<label>在特定节点前添加节点<input type="radio" name="nodeAction"/></label>
+				<label>删除特定节点<input type="radio" name="nodeAction"/></label>
+			</p>
+			<select id="grafCount"></select>
+			<input type="submit" value="提交"/>
+		</form>
+		<div id="modifiable"></div>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>12时制和24时制的互换</title>
+	</head>
+	<style>
+		body{text-align: center;}
+	</style>
+	<script type="text/javascript">
+		window.onload = initShizhi;
+	    
+	    function initShizhi(){
+	    	var now = new Date();
+	    	var timeString = showHours(now.getHours()) + showZeroField(now.getMinutes())+ showZeroField(now.getSeconds());
+	    	document.getElementById("Time").innerHTML = timeString;
+	    	
+	    	setTimeout(initShizhi,10);
+	    	
+	    	 function showZeroField(theHour){
+	    	if(theHour < 10){
+	    		return ":0"+theHour;
+	    	}else{
+	    		return ":" + theHour;
+	    	}
+	    }
+	    
+	    function showHours(now){
+	    	var radioList = document.getElementsByName("shizhi");
+	    	for(var i=0 ; i< radioList.length ;i++){
+	    		if(radioList[i].checked == true){
+	    			if(now <= 12){
+	    				return "上午："+now;
+	    			}else{
+	    				return "下午："+ now%12;
+	    			}
+	    		}else{
+	    			return now;
+	    		}
+	    	}
+	    }
+	    }
+	    
+	   
+	    
+	</script>
+	<body>
+		<p><span id="Time"></span></p><br />
+		<input type="radio" name="shizhi" id="show12" />12小时
+		<input type="radio" name="shizhi" id="show24" />24小时
+	</body>
+</html>

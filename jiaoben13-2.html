@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>My Second Ajax Script</title>
+	</head>
+
+	<body>
+		<div id="pictureBar"> </div>
+	</body>
+    <script type="text/javascript">
+    	window.onload = initAll;
+    	var xhr = false;
+    	
+    	//初始化函数，这个脚本是解析获取到的xml数据
+    	function initAll(){
+    		//获取到xml数据
+    		if(window.XMLHttpRequest){  //
+    			xhr = new  XMLHttpRequest();
+    		}else{
+    			if(window.ActiveXObject()){
+    				try{
+    					xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    				}catch(e){}
+    			}
+    		}
+    		//如果xhr对象存在，那么就获取数据并解析
+    		if(xhr){
+    			xhr.onreadystatechange = showPicture;
+    			xhr.open("GET","flickrfeed.xml",true);
+    			xhr.send(null);
+    		}
+    		else{
+    			alert("Sorry, but I couldn't create an XMLHttpRequest");
+    		}
+    		//对获取到的数据进行解析
+    	}
+    	
+    	function showPicture(){
+    		var tempDiv = document.createElement("div");
+    		var tempText = document.createElement("div");
+    		
+    		if(xhr.readyState == 4){
+    			if(xhr.status == 200){
+    				var allImages = xhr.responseXML.getElementsByTagName("content");
+    				
+    				for(var i=0; i<allImages.length; i++){
+    					tempText.innerHTML = getPixVal(allImages[i]);
+    					tempDiv = tempText.getElementsByTagName("p");
+    					
+    					var theText = tempDiv[1].innerHTML;
+    					theText = theText.replace(/240/g,"75");
+    					theText = theText.replace(/180/g,"75");
+    					theText = theText.replace(/_m/g,"_s");
+    					docunment.getElementById("pictureBar").innerHTML += theText;
+    				}
+    			}
+    			else{
+    				alert("There was a problem with the request " + xhr.status);
+    			}
+    		}
+    		function getPixVal(inVal){
+    			return (inVal.textContent) ? inVal.textContent : inVal.text;
+    		}
+    	}
+    	
+    	
+    </script>
+</html>

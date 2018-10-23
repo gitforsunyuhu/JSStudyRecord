@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用js显示表格</title>
+		<style type="text/css">
+			body{margin:0;padding:0;}
+			h1{margin:0;padding:0;}
+			h2{margin:0;padding:0;}
+			p{margin:0;padding:0;}
+			.leftside{
+				width:250px ;
+				height: 500px;
+				background: wheat;
+				float: left;
+			}
+			.chartleft{
+				float: left;
+				height: 60px;
+				line-height: 60px;
+			}
+			.chartright{
+				border-left: 1px solid cornflowerblue;
+				margin-left: 10px;
+				height: 60px;
+				padding: 0 0 0 10px;
+				line-height: 60px;
+				float: left;
+			}
+			.chartrow{
+				height: 18px;
+				line-height: 18px;
+				margin: 2px 0 0 0;
+			}
+			.zhutu{
+				width: 20px;
+				display: inline-block;
+				height: 18px;
+				background: red;
+				margin: 2px 0 0 0;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="leftside">
+			<h1>choose a chart</h1>
+			<input type="radio" name="charttype" checked="checked" />浏览器使用情况<br />
+			<input type="radio" name="charttype" />js使用情况
+			<br /><br />
+			<h1>choose a color</h1>
+			<input type="radio" name="color" checked="checked" />red<br />
+			<input type="radio" name="color" />yellow
+			<br /><br />
+			<h1>choose a direction</h1>
+			<input type="radio" name="direction" checked="checked" />horizontal<br />
+			<input type="radio" name="direction" />vertical
+		</div>
+		<div class="rightside">
+			<p id="tabletitle">Browser usage by year</p>
+			<div class="yearandchart">
+				<div class="chartleft">
+					<h2>1998</h2>
+				</div>
+				<div class="chartright">
+					<div class="chartrow">
+						<span class="typeone">Netscape/Mozilla</span>
+						<span class="zhutu"></span>
+						<span class="number">38.9</span><br />
+					</div>
+					<div class="chartrow">
+						<span class="typetwo">Netscape/Mozilla</span>
+						<span class="zhutu"></span>
+						<span class="number">38.9</span><br />
+					</div>
+					<div class="chartrow">
+						<span class="typethree">Netscape/Mozilla</span>
+						<span class="zhutu"></span>
+						<span class="number">38.9</span>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//先定义数组，浏览器类型
+		
+		//定义数组
+	</script>
+</html>

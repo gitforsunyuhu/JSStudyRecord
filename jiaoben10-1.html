@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>add node</title>
+		<script type="text/javascript">
+			window.onload = initAdd;
+			function initAdd(){
+				document.getElementsByTagName("form")[0].onsubmit = addNode;
+				document.getElementById("delNode").onclick = delNode;
+			}
+			function addNode(){
+				var inText = document.getElementById("textarea").value;
+				var newText = document.createTextNode(inText);
+				var newGraf = document.createElement("p");
+				newGraf.appendChild(newText);
+				var newP =document.getElementsByTagName("body")[0];
+				newP.appendChild(newGraf);
+				return false;
+			}
+			
+			
+			function delNode(){
+				var Body = document.getElementsByTagName("body")[0];
+				var pnum = document.getElementsByTagName("p");
+				
+				if(pnum.length>0){
+					Body.removeChild(pnum[pnum.length-1])
+				}else{
+					alert("no node to delete!")
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<form action="huandengpian.html">
+			<textarea id="textarea"></textarea><br />
+			<input type="submit"  value="addNode"/><br />
+			<a id="delNode" href="#">click this to delete</a><br />
+			paragraph #:
+			<select id="grafCount" >
+			</select> 
+			
+		</form>
+	</body>
+</html>

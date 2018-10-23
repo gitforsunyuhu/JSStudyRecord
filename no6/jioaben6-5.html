@@ -1,0 +1,42 @@
+<!DOCTYPE html>  
+<html> 
+<head> 
+     <title>Password Check</title> 
+     <style>
+     body {  
+	     color: #000; 
+	     background-color: #FFF
+	} 
+	 
+	input.invalid { 
+	     background-color: #FF9;
+	     border: 2px red inset;
+	} 
+	 
+	label.invalid { 
+	     color: #F00; 
+	     font-weight: bold; 
+	} 
+     </style>
+     <script src="../js/no6/6-5.js"></script> 
+</head> 
+
+<body> 
+	<form action="#"> 
+	     <p>
+	      	<label for="userName">Your name:<input type="text" size="30" id="userName" class="reqd"></label> 
+	     </p>
+	     <p>
+	     	<label for="passwd1">Choose a password: <input type="password" id="passwd1" class="reqd">
+	     	</label>
+	     	</p>	
+	     <p>
+	     	<label for="passwd2">Verify password:<input type="password" id="passwd2" class="reqd passwd1"> 
+	     	</label>
+	     </p>
+	     <p>
+	        <input type="submit" value="Submit">&nbsp;<input type="reset">
+	      </p>
+	</form> 
+</body> 
+</html> 

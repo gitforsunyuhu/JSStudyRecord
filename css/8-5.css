@@ -1,0 +1,26 @@
+background{
+	#ccc;
+}
+#rEye,#lEye{position: absolute;}
+
+#lEye{
+	left:10px;
+}
+
+#rEye{
+	left:40px;
+}
+
+#lDot,#rDot {
+	position: absolute;
+	top:17px;    /*如果到9px就是向上看，如果是26就是向下看*/
+	width: 5px;
+	height: 5px;
+}
+
+#lDot {
+	left: 19px;
+}
+#rDot {
+	left: 50px;
+}
