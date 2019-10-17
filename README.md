@@ -1,6 +1,6 @@
 # JavaScript学习记录
 
-> 这是我学习《JavaScript快速入门指南》这本书的源码记录
+> 这是我学习《JavaScript基础教程》这本书的源码记录
 
 # Tips
 
